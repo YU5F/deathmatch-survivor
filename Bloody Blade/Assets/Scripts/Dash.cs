@@ -5,71 +5,45 @@ using UnityEngine;
 
 public class Dash : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public float dashSpeed;
-    private float dashTime;
-    public float startDashTime;
-    private int direction;
+    [Header("Dashing")]
+    [SerializeField] private float dashingVelocity = 14f;
+    [SerializeField] private float dashingTime = 0.5f;
+    private Vector2 dashingDirection;
+    private bool isDashing;
+    Rigidbody2D rb;
+    private bool canDash = true;
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
-        dashTime = startDashTime;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (direction == 0)
+        var dashInput = Input.GetButtonDown("Dash");
+        if (dashInput && canDash)
         {
-            if (Input.GetKeyDown(KeyCode.A) && Input.GetKeyDown(KeyCode.LeftShift))
+            isDashing = true;
+            canDash = false;
+            dashingDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            if (dashingDirection == Vector2.zero)
             {
-                direction = 1;
+                dashingDirection = new Vector2(transform.localScale.x, y: 0);
             }
-            else if (Input.GetKeyDown(KeyCode.D) && Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                direction = 2;
-            }
-            else if (Input.GetKeyDown(KeyCode.W) && Input.GetKeyDown(KeyCode.LeftShift))
-            {
+            StartCoroutine(StopDashing());
 
-
-                direction = 3;
-            }
-            else if (Input.GetKeyDown(KeyCode.S) && Input.GetKeyDown(KeyCode.LeftShift))
-            {
-                direction = 4;
-            }
         }
-        else
+        if (isDashing)
         {
-            if (dashTime <= 0)
-            {
-                direction = 0;
-                dashTime = startDashTime;
-                rb.velocity = Vector2.zero;
-            }
-            else
-            {
-                dashTime -= Time.deltaTime;
-                if (direction == 1)
-                {
-                    rb.velocity = Vector2.left * dashSpeed;
-                }
-                else if (direction == 2)
-                {
-                    rb.velocity = Vector2.right * dashSpeed;
-                }
-                else if (direction == 3)
-                {
-                    rb.velocity = Vector2.up * dashSpeed;
-                }
-                else if (direction == 4)
-                {
-                    rb.velocity = Vector2.down * dashSpeed;
-                }
-            }
+            rb.velocity = dashingDirection.normalized * dashingVelocity;
+            return;
         }
-
+    }
+    private IEnumerator StopDashing()
+    {
+        yield return new WaitForSeconds(dashingTime);
+        isDashing = false;
     }
 }

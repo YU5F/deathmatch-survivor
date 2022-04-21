@@ -7,11 +7,11 @@ public class AIController : inputController
 {
     public override float retrieveHorizontalMoveInput()
     {
-        throw new System.NotImplementedException();
+        return 1f;
     }
 
     public override float retrieveVerticalMoveInput()
     {
-        throw new System.NotImplementedException();
+        return 1f;
     }
 }
