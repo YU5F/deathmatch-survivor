@@ -29,7 +29,19 @@ public class Move : MonoBehaviour
     {
         direction.x = input.retrieveHorizontalMoveInput();
         direction.y = input.retrieveVerticalMoveInput();    
-        desiredVelocity = new Vector2(direction.x, 0f) * Mathf.Max(maxSpeed - wall.GetFriction(), 0f);
-        desiredVelocity = new Vector2(0F, direction.y) * Mathf.Max(maxSpeed - wall.GetFriction(), 0f);
+        desiredVelocity = new Vector2(direction.x, direction.y) * Mathf.Max(maxSpeed - wall.GetFriction(), 0f);
+    }
+
+    private void FixedUpdate(){
+        isColliding = wall.GetIsColliding();
+        velocity = body.velocity;
+
+        acceleration = isColliding ? maxAcceleration : maxAcceleration;
+        maxSpeedChange = acceleration * Time.deltaTime;
+
+        velocity.x = Mathf.MoveTowards(velocity.x, desiredVelocity.x, maxSpeedChange);
+        velocity.y = Mathf.MoveTowards(velocity.y, desiredVelocity.y, maxSpeedChange);
+
+        body.velocity = velocity;
     }
 }
