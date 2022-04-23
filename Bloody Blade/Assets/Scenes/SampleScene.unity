@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 164636261}
   - component: {fileID: 164636260}
   - component: {fileID: 164636262}
-  - component: {fileID: 164636263}
-  - component: {fileID: 164636264}
   - component: {fileID: 164636265}
+  - component: {fileID: 164636267}
+  - component: {fileID: 164636266}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -230,32 +230,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &164636263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164636259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9786791364ce3b44da3aa6cb741a84d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashingVelocity: 14
-  dashingTime: 0.5
---- !u!114 &164636264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164636259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7abd92c86d2b6974a84e3f491fcc29c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &164636265
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -282,6 +256,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &164636266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164636259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a37ee8ac964a34498a38d9f3c88693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &164636267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164636259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ee7a060fae620468b34392ee586c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 11400000, guid: 6370e28a4eb35fe44a56ae5db5275c75, type: 2}
+  maxSpeed: 10
+  maxAcceleration: 100
+  dashSpeed: 27
+  dashLength: 0.2
+  dashCooldown: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686293137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.01, y: 2.04, z: 0}
+  m_LocalPosition: {x: -1.66, y: -2.06, z: 0}
   m_LocalScale: {x: 3.8815, y: 3.2593, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

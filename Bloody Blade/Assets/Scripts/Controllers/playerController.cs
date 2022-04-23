@@ -5,6 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="playerController", menuName ="inputController/playerController")]
 public class playerController : inputController
 {
+    public override bool retrieveDashInput()
+    {
+        return Input.GetKeyDown(KeyCode.Space);
+    }
+
     public override float retrieveHorizontalMoveInput()
     {
         return Input.GetAxisRaw("Horizontal");
