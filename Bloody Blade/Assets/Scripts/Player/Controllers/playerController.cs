@@ -17,4 +17,9 @@ public class playerController : inputController
     {
         return Input.GetAxisRaw("Vertical");
     }
+
+    public override Vector3 retrieveMousePos()
+    {
+        return Input.mousePosition;
+    }
 }

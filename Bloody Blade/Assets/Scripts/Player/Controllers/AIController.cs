@@ -13,6 +13,11 @@ public class AIController : inputController
         return 1f;
     }
 
+    public override Vector3 retrieveMousePos()
+    {
+        return Vector3.zero;
+    }
+
     public override float retrieveVerticalMoveInput()
     {
         return 1f;

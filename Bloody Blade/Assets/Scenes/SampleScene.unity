@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 164636265}
   - component: {fileID: 164636267}
   - component: {fileID: 164636266}
+  - component: {fileID: 164636263}
+  - component: {fileID: 164636264}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -230,6 +232,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &164636263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164636259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936620053ce22a94f9a95096696352b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 11400000, guid: 6370e28a4eb35fe44a56ae5db5275c75, type: 2}
+  dashSpeed: 20
+  dashLength: 0.2
+  dashCooldown: 0.2
+  activeMoveSpeed: 0
+--- !u!114 &164636264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164636259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c8364de0b1facc418400ca677ec2175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 11400000, guid: 6370e28a4eb35fe44a56ae5db5275c75, type: 2}
+  cam: {fileID: 519420031}
+  playerRb: {fileID: 164636262}
+  offset: 90
 --- !u!61 &164636265
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -282,10 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 11400000, guid: 6370e28a4eb35fe44a56ae5db5275c75, type: 2}
   maxSpeed: 10
-  maxAcceleration: 100
-  dashSpeed: 35
-  dashLength: 0.2
-  dashCooldown: 0.5
+  maxAcceleration: 150
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
