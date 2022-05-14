@@ -6,4 +6,5 @@ public abstract class inputController : ScriptableObject
     public abstract float retrieveHorizontalMoveInput();
     public abstract bool retrieveDashInput();
     public abstract Vector3 retrieveMousePos();
+    public abstract bool retrieveSlashInput();
 }

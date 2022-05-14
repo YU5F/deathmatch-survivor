@@ -22,4 +22,9 @@ public class playerController : inputController
     {
         return Input.mousePosition;
     }
+
+    public override bool retrieveSlashInput()
+    {
+        return Input.GetMouseButtonDown(0);
+    }
 }

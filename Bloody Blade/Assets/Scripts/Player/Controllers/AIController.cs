@@ -18,6 +18,11 @@ public class AIController : inputController
         return Vector3.zero;
     }
 
+    public override bool retrieveSlashInput()
+    {
+        return true;
+    }
+
     public override float retrieveVerticalMoveInput()
     {
         return 1f;

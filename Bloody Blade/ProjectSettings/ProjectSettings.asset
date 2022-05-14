@@ -636,7 +636,7 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     Build: 0
-    Collab: 1
+    Collab: 0
     Game Performance: 0
     Legacy Analytics: 0
     Purchasing: 0
@@ -655,7 +655,7 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 42ca903e-4138-45a7-80b8-b51c9e68aace
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Bloody Blade
