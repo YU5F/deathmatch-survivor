@@ -18,7 +18,7 @@ public class AIController : inputController
         return Vector3.zero;
     }
 
-    public override bool retrieveSlashInput()
+    public override bool retrieveFireInput()
     {
         return true;
     }
