@@ -5,11 +5,12 @@ public class Bullet : MonoBehaviour
     private GameObject player;
     [SerializeField, Range(10f, 50f)] private float maxRange = 30.0f;
     [SerializeField, Range(1, 100)] private int damage = 10;
-    private EnemyStats enemy;
+    [SerializeField] private GameObject enemy;
+    private EnemyStats enemyStats;
 
     void Awake(){
         player = GameObject.Find("Player");
-        enemy = GameObject.Find("Enemy").GetComponent<EnemyStats>();
+        enemyStats = enemy.GetComponent<EnemyStats>();
     }
     void Update(){
         float distance = Vector3.Distance(transform.position, player.transform.position);
@@ -21,11 +22,12 @@ public class Bullet : MonoBehaviour
         if(!collision.gameObject.CompareTag("player")){
             Destroy(gameObject);
         }
+
         if(collision.gameObject.CompareTag("enemy")){
-            enemy.enemyHealth -= damage;
-            Destroy(gameObject);
-            if(enemy.enemyHealth <= 0){
+            enemyStats.enemyHealth -= damage;
+            if(enemyStats.enemyHealth <= 0){
                 Destroy(collision.gameObject);
+                enemyStats.enemyHealth = 100;
             }
         }
     }
