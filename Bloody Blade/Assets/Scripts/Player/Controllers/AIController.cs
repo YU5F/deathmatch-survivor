@@ -20,7 +20,7 @@ public class AIController : inputController
 
     public override bool retrieveFireInput()
     {
-        return true;
+        return false;
     }
 
     public override float retrieveVerticalMoveInput()
