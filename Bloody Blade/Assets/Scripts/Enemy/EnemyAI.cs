@@ -6,7 +6,7 @@ using Pathfinding;
 public class EnemyAI : MonoBehaviour
 {
     private Transform target;
-    [SerializeField] private float speed = 500f;
+    [SerializeField] private float speed;
     public float nextWaypointDistance = 3f;
 
     Path path;
@@ -15,7 +15,11 @@ public class EnemyAI : MonoBehaviour
 
     Seeker seeker;
     Rigidbody2D enemyRb;
+    EnemyStats enemyStats;
 
+    void Awake(){
+        enemyStats = GetComponent<EnemyStats>();
+    }
     void OnPathComplete(Path p){
         if(!p.error){
             path = p;
@@ -51,7 +55,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - enemyRb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
+        Vector2 force = direction * enemyStats.speed * Time.deltaTime;
 
         enemyRb.AddForce(force);
 

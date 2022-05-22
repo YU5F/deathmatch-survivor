@@ -7,4 +7,5 @@ public abstract class inputController : ScriptableObject
     public abstract bool retrieveDashInput();
     public abstract Vector3 retrieveMousePos();
     public abstract bool retrieveFireInput();
+    public abstract bool retrieveThrowInput();
 }

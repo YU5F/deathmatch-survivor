@@ -27,4 +27,9 @@ public class playerController : inputController
     {
         return Input.GetMouseButtonDown(0);
     }
+
+    public override bool retrieveThrowInput()
+    {
+        return Input.GetMouseButtonDown(1);
+    }
 }
