@@ -145,5 +145,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxRange: 30
-  damage: 100
   enemy: {fileID: 3122779648840296031, guid: 86102e6589a4c904eaf6eb2a456acae4, type: 3}
+  drop: {fileID: 5315819473266448405, guid: 07ee325aa6385ac41a12135649321b6b, type: 3}

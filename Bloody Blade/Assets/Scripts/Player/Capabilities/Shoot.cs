@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
@@ -7,12 +6,20 @@ public class Shoot : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField, Range(0f, 50f)] private float bulletForce = 20.0f;
+    private PlayerStats stats;
+
+    void Awake(){
+        stats = GetComponent<PlayerStats>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         if(input.retrieveFireInput()){
-            Shooting();
+            if(stats.ammo != 0){
+                Shooting();
+                stats.ammo--;
+            }
         }
     }
 
