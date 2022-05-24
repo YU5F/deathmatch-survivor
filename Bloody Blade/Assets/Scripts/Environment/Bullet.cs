@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
     [SerializeField, Range(10f, 50f)] private float maxRange = 30.0f;
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject drop;
+    [SerializeField, Range(0, 100)] private int dropProbability = 40;
 
     void Awake(){
         player = GameObject.Find("Player");
@@ -22,8 +23,14 @@ public class Bullet : MonoBehaviour
         }
 
         if(collision.gameObject.CompareTag("enemy")){
-            Instantiate(drop, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            if(randomNumberGenerate() <= dropProbability){
+                Instantiate(drop, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+            }
             Destroy(collision.gameObject);
         }
+    }
+
+    int randomNumberGenerate(){
+        return Random.Range(0, 100);
     }
 }

@@ -20,7 +20,7 @@ public class Throw : MonoBehaviour
     void ThrowObject(){
         GameObject throwable = Instantiate(throwableObject, firePoint.position, firePoint.rotation);
         Rigidbody2D throwableRb = throwable.GetComponent<Rigidbody2D>();
-        throwableRb.AddForce(firePoint.up * throwForce, ForceMode2D.Impulse);
+        throwableRb.AddForce(firePoint.right * throwForce, ForceMode2D.Impulse);
         throwableRb.AddTorque(5f, ForceMode2D.Impulse);
     }
 

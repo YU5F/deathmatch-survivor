@@ -8,6 +8,7 @@ TagManager:
   - enemy
   - throwable
   - ammo
+  - enemySpawnPos
   layers:
   - Default
   - TransparentFX
