@@ -9,6 +9,8 @@ TagManager:
   - throwable
   - ammo
   - enemySpawnPos
+  - bullet
+  - mainEnemies
   layers:
   - Default
   - TransparentFX
@@ -16,9 +18,9 @@ TagManager:
   - 
   - Water
   - UI
+  - Floor
   - Wall
-  - 
-  - 
+  - MainEnemy
   - 
   - 
   - 
@@ -45,4 +47,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 893930939
+    locked: 0
+  - name: Wall
+    uniqueID: 1098700711
+    locked: 0
+  - name: Object
+    uniqueID: 1482208561
     locked: 0

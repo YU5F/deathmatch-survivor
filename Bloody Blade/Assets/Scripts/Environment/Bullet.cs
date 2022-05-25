@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject drop;
     [SerializeField, Range(0, 100)] private int dropProbability = 40;
+    [SerializeField] private GameObject effect;
 
     void Awake(){
         player = GameObject.Find("Player");
@@ -20,11 +21,13 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if(!collision.gameObject.CompareTag("player")){
             Destroy(gameObject);
+            GameObject hitEffect = Instantiate(effect, transform.position, Quaternion.identity);
+            Destroy(hitEffect, 0.2f);
         }
 
         if(collision.gameObject.CompareTag("enemy")){
             if(randomNumberGenerate() <= dropProbability){
-                Instantiate(drop, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+                Instantiate(drop, collision.gameObject.transform.position, Quaternion.identity);
             }
             Destroy(collision.gameObject);
         }

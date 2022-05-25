@@ -6,7 +6,6 @@ public class RotateTowardsMouse : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] Rigidbody2D playerRb;
     [SerializeField] private float offset = 90.0f;
-    [SerializeField, Range(0f, 20f)] private float rotateSpeed = 20f;
     Vector2 mousePos;
     
 
@@ -19,6 +18,6 @@ public class RotateTowardsMouse : MonoBehaviour
     void FixedUpdate(){
         Vector2 lookDir = mousePos - playerRb.position;
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - offset;
-        playerRb.rotation = Mathf.MoveTowardsAngle(playerRb.rotation, angle, rotateSpeed);
+        playerRb.rotation = angle;
     }
 }

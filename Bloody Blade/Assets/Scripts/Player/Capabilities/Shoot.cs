@@ -19,6 +19,7 @@ public class Shoot : MonoBehaviour
             if(stats.ammo != 0){
                 Shooting();
                 stats.ammo--;
+                stats.AutoAmmoRefillCooldown = 5f;
             }
         }
     }

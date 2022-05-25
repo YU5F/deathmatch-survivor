@@ -63,5 +63,9 @@ public class EnemyAI : MonoBehaviour
         if(distance < nextWaypointDistance){
             currentWaypoint++;
         }
+
+        var dir = target.position - transform.position;
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90.0f;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }

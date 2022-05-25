@@ -5,13 +5,14 @@ using UnityEngine;
 public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject enemy;
-    [SerializeField] private float spawnRate = 2f;
+    public float spawnRate = 2f;
     [SerializeField] private float rateIncreseDelay = 30f;
-    [SerializeField] private float maxSpawnRate = 1f;
+    public float maxSpawnRate = 0.5f;
     [SerializeField] private float delayDecrease = 0.1f;
     private GameObject[] spawnPositions;
     private int spawnPositionAmount;
     private GameManager gameManager;
+    private int mainEnemyAmount;
 
     void Awake(){
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
@@ -42,6 +43,14 @@ public class SpawnEnemy : MonoBehaviour
                     spawnRate -= delayDecrease;
                 }
             }
+        }
+    }
+
+    void Update(){
+        mainEnemyAmount = GameObject.FindGameObjectsWithTag("mainEnemies").Length;
+        if(mainEnemyAmount == 0){
+            gameManager.gameOver = true;
+            gameManager.gameState = "Win";
         }
     }
 
