@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54d21f6ece3b46479f0c328f8c6007e0, type: 3}
-  m_Name: Yellow to Orange - Vertical
+  m_Name: Custom
   m_EditorClassIdentifier: 
   colorMode: 3
-  topLeft: {r: 1, g: 1, b: 0.5661765, a: 1}
-  topRight: {r: 0.3962264, g: 0.39622638, b: 0.1439124, a: 1}
-  bottomLeft: {r: 1, g: 0.23113209, b: 0.23113209, a: 1}
+  topLeft: {r: 1, g: 0.63666475, b: 0.5647059, a: 1}
+  topRight: {r: 0.39607844, g: 0.19296707, b: 0.14509808, a: 1}
+  bottomLeft: {r: 1, g: 0.23137255, b: 0.23137255, a: 1}
   bottomRight: {r: 1, g: 0, b: 0, a: 1}

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,10 +26,10 @@ public class GameManager : MonoBehaviour
         }
 
         if(gameState == "Lose"){
-            Debug.Log("You Lost");
+            SceneManager.LoadScene("LoseScene");
         }
         else if(gameState == "Win"){
-            Debug.Log("You Win");
+            SceneManager.LoadScene("WinScene");
         }
     }
 }

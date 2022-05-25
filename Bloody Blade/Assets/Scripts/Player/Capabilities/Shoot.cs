@@ -15,7 +15,7 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(input.retrieveFireInput()){
+        if(input.retrieveFireInput() && !PauseMenu.gameIsPaused){
             if(stats.ammo != 0){
                 Shooting();
                 stats.ammo--;
